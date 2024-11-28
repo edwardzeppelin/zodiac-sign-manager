@@ -20,8 +20,9 @@ int main() {
 		cout << "1 - Show all persons" << endl;
 		cout << "2 - Add person" << endl;
 		cout << "3 - Delete person" << endl;
-		cout << "4 - Search by sign" << endl;
-		cout << "5 - Exit" << endl;
+		cout << "4 - Edit person" << endl;
+		cout << "5 - Search by sign" << endl;
+		cout << "6 - Exit" << endl;
 		cout << "Choose an action: ";
 
 		cin >> choice;
@@ -68,6 +69,25 @@ int main() {
 					cout << "No persons\n";
 				}
 				else {
+					int index;
+					cout << "Enter index of person to edit (1 to " << size << "): ";
+					cin >> index;
+					if (index <= 0)
+						throw invalid_argument("Cant be negative");
+					if (index > size)
+						throw invalid_argument("Cant be more than count of persons");
+					else {
+						cin >> persons[index - 1];
+						cout << "Person has been edited\n";
+					}
+				}
+
+				break;
+			case 5:
+				if (size == 0) {
+					cout << "No persons\n";
+				}
+				else {
 					string find;
 					string fsign;
 					cout << "Enter sign:\n";
@@ -84,7 +104,7 @@ int main() {
 						cout << "No persons for sign: " << fsign << endl;
 				}
 				break;
-			case 5:
+			case 6:
 				cout << "Exiting..." << endl;
 				return 0;
 			default:
