@@ -12,14 +12,13 @@ private:
 
 public:
 
-    sign() {
-        name = "";
-        surname = "";
-        nsign = "";
-        date[0] = 0;
-        date[1] = 0;
-        date[2] = 0;
-    }
+    sign();
+
+    sign(const string& newname, const string& newsurname, const string& newsign, int day, int month, int year);
+
+    sign(const sign& other);
+
+    ~sign() { cout << "Deconstructor called" << endl; };
 
     void setname(const string& newname) { name = newname; };
     string getname() const { return name; };

@@ -126,6 +126,8 @@ int main() {
 		}
 	}
 
+	delete[] persons;
+
 	return 0;
 }
 

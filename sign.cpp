@@ -1,5 +1,35 @@
 #include "sign.h"
 
+sign::sign() {
+    name = "";
+    surname = "";
+    nsign = "";
+    date[0] = 0;
+    date[1] = 0;
+    date[2] = 0;
+    cout << "Default constructor called" << endl;
+}
+
+sign::sign(const string& newname, const string& newsurname, const string& newsign, int day, int month, int year) {
+    name = newname;
+    surname = newsurname;
+    nsign = newsign;
+    date[0] = day;
+    date[1] = month;
+    date[2] = year;
+    cout << "Parametr constructor called" << endl;
+}
+
+sign::sign(const sign& other) {
+    name = other.name;
+    surname = other.surname;
+    nsign = other.nsign;
+    date[0] = other.date[0];
+    date[1] = other.date[1];
+    date[2] = other.date[2];
+    cout << "Copy constructor called" << endl;
+}
+
 ostream& operator<<(ostream& out, const sign& sign) {
     out << "Name: " << sign.name << "\n"
         << "Surname: " << sign.surname << "\n"
